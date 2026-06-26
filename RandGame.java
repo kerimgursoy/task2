@@ -1,23 +1,38 @@
-public class RandGame{
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class RandGame extends Thread{
     int num;
-    long start;
-    public void startGame(){
+
+    @Override
+    public void run() {
         num = (int) (Math.random()*101);
-        start = System.currentTimeMillis();
+        TTimer timer = new TTimer();
+        timer.start();
+        int n;
+
+        do {
+            System.out.println("Sayı gir: ");
+            Scanner scan = new Scanner(System.in);
+            try{
+                n = scan.nextInt();
+            }
+            catch (InputMismatchException f){
+                System.out.println("Geçersiz değer girildi, değer -1 kabul edildi.");
+                n = -1;
+                scan.next();
+            }
+        } while (!guess(n));
+        timer.stat = 1;
     }
+
     public boolean guess(int n){
-        if (System.currentTimeMillis() - start>15000){
-            System.out.println("Zaman bitti");
-            return true;
-        }
-        else if(n < num){
+        if(n < num){
             System.out.println("Çok küçük");
-            System.out.println("Kalan zaman: "+(15000+start-System.currentTimeMillis())/1000);
             return false;
         }
         else if(n > num){
             System.out.println("Çok büyük");
-            System.out.println("Kalan zaman: "+(15000+start-System.currentTimeMillis())/1000);
             return false;
         }
         else {
@@ -25,4 +40,6 @@ public class RandGame{
             return true;
         }
     }
+
+
 }
