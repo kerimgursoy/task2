@@ -14,5 +14,6 @@ public class TTimer extends Thread{
             }
             anInt++;
         }
+        System.exit(0);
     }
 }
