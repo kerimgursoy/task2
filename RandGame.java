@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class RandGame extends Thread{
     int num;
-
+    RandGame gameP;
     @Override
     public void run() {
         num = (int) (Math.random()*101);
-        TTimer timer = new TTimer();
+        TTimer timer = new TTimer(gameP);
         timer.start();
         int n;
 
