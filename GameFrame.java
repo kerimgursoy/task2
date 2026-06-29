@@ -14,7 +14,7 @@ public class GameFrame extends JFrame {
         this.setLocationRelativeTo(null);
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Kenar boşlukları
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         text = new JLabel("1 ile 100 arasında bir tahmin yap");
         text.setAlignmentX(Component.CENTER_ALIGNMENT);
