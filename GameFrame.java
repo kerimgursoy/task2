@@ -11,7 +11,7 @@ public class GameFrame extends JFrame {
         this.setTitle("Tahmin Et");
         this.setResizable(false);
         this.setSize(420, 240);
-
+        this.setLocationRelativeTo(null);
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Kenar boşlukları
